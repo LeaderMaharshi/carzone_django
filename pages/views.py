@@ -1,15 +1,24 @@
 from django.shortcuts import render
+from .models import Team
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    team_members = Team.objects.all()
+    context = {
+        'team_members': team_members,
+    }
+    return render(request, 'home.html', context)
 
 def cars(request):
     return render(request, 'pages/cars.html')
 
 def about(request):
-    return render(request, 'pages/about.html')
+    team_members = Team.objects.all()
+    context = {
+        'team_members': team_members,
+    }
+    return render(request, 'pages/about.html', context)
 
 def services(request):
     return render(request, 'pages/services.html')
