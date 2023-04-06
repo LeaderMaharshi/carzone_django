@@ -10,8 +10,6 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
-def cars(request):
-    return render(request, 'pages/cars.html')
 
 def about(request):
     team_members = Team.objects.all()
