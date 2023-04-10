@@ -19,3 +19,14 @@ class Team(models.Model):
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
     
+    
+    # class TeamAdmin(admin.ModelAdmin):
+    # def thumbnail(self, object):
+    #     return format_html('<img src="{}" style="border-radius:50px; " width="40"/>'.format(object.photos.url))
+    
+    # thumbnail.short_description = 'Photo'
+    
+    #     search_fields = ('first_name', 'last_name', 'Designation')
+    # list_display = ('id', 'thumbnail', 'first_name', 'last_name', 'Designation', 'created_date')
+    # list_display_links = ('id', 'thumbnail', 'first_name', 'last_name')
+    # list_filter = ('Designation', )

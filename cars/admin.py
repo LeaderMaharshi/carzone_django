@@ -10,7 +10,6 @@ class CarAdmin(admin.ModelAdmin):
     list_display_links = ('car_title', 'city', 'color', 'year' )
     list_editable = ('is_featured',)
     list_filter = ('car_title', 'city', 'color', 'year')
-    
-
-
+  
+  
 admin.site.register(Car, CarAdmin)

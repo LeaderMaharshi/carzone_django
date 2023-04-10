@@ -87,12 +87,18 @@ class Car(models.Model):
         ('5', '5'),
         ('6', '6'),
     )
+    fuel_choices = (
+        ('petrol', 'Petrol'),
+        ('diesel', 'Diesel'),
+        ('cng', 'cng'),
+    )
     
     car_title = models.CharField(max_length=250)
     city = models.CharField(max_length=100)
     state = models.CharField(choices=state_choice, max_length=100)
     color = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
+    fuel_type = models.CharField(max_length=100, choices=fuel_choices, blank=True)
     year = models.IntegerField(('year'), choices=year_choice)
     condition = models.CharField(max_length=100)
     price = models.IntegerField()
@@ -119,3 +125,6 @@ class Car(models.Model):
     
     def __str__(self):
         return self.car_title
+    
+    def address_car(self):
+        return f'{self.city}, {self.state}'
