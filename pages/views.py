@@ -7,12 +7,12 @@ from .models import Team
 
 def home(request):
     team_members = Team.objects.all()
-    cars = Car.objects.all()
+    # cars = Car.objects.all()
     featured_cars = Car.objects.all()
     context = {
         'team_members': team_members,
         'featured_cars': featured_cars,
-        'cars': cars,
+        # 'cars': cars,
     }
     return render(request, 'home.html', context)
 
